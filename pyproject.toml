@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telegram-cli"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "pyrogram @ git+https://github.com/qloops/pyrogram.git",
+    "tgcrypto",
+    "python-dotenv",
+]
+
+[project.optional-dependencies]
+build = [
+    "pyinstaller",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["*"]
