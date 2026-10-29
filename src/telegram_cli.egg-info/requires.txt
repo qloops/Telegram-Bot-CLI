@@ -1,6 +1,0 @@
-pyrogram @ git+https://github.com/qloops/pyrogram.git
-tgcrypto
-python-dotenv
-
-[build]
-pyinstaller

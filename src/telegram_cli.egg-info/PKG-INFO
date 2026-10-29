@@ -1,9 +1,0 @@
-Metadata-Version: 2.4
-Name: telegram-cli
-Version: 0.1.0
-Requires-Python: >=3.10
-Requires-Dist: pyrogram @ git+https://github.com/qloops/pyrogram.git
-Requires-Dist: tgcrypto
-Requires-Dist: python-dotenv
-Provides-Extra: build
-Requires-Dist: pyinstaller; extra == "build"
