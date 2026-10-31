@@ -20,7 +20,7 @@ from bot_cli.core.config import BotConfig
 from bot_cli.app import Application
 
 
-# Пока что глушим реконнекты, ибо они ничего не ломают, а срут обильно (спасибо ркн)
+# Пока что глушим реконнекты (и не только), ибо они ничего не ломают, а срут обильно (спасибо ркн)
 def exception_handler(loop, context):
     exception = context.get("exception")
     if isinstance(exception, (AttributeError, ConnectionResetError)):

@@ -14,9 +14,9 @@ class Socks5Proxy:
         
         parts = endpoint.strip().split(":")
         if len(parts) != 2:
-            raise ValueError("Requirement proxy format: host:port (exemple: 127.0.0.1:9090)")
+            raise ValueError("Requirements for proxy format: host:port (example: 127.0.0.1:9090)")
 
-        host, port = parts[0], parts[1]
+        host, port = parts[0], int(parts[1])
         return cls(host=host, port=port)
 
     def to_pyrogram_dict(self) -> Dict[str, Any]:

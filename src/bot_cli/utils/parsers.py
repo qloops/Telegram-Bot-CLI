@@ -17,6 +17,6 @@ def parse_target_ids(raw_input: str, reverse: bool = False) -> List[int]:
             try:
                 targets.append(int(token))
             except ValueError:
-                print(f"Skiped invalid ID: {token}")
+                print(f"Skipped invalid ID: {token}")
 
     return sorted(set(targets), reverse=reverse)

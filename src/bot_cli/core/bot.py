@@ -35,7 +35,7 @@ class TelegramBotSession:
     @property
     def me(self) -> User:
         if not self._me:
-            raise RuntimeError("No initalitin session")
+            raise RuntimeError("No initialization session")
         return self._me
 
     @property

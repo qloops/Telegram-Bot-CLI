@@ -9,10 +9,6 @@ from dotenv import load_dotenv
 
 from bot_cli.core.proxy import Socks5Proxy
 
-# TODO: Не забыть указать какие не жалко
-DEFAULT_API_ID: Optional[int] = None
-DEFAULT_API_HASH: Optional[str] = None
-
 
 def _load_env() -> None:
     base_dir = (
@@ -62,13 +58,13 @@ class BotConfig:
         _load_env()
 
         api_id_env = os.getenv("TELEGRAM_API_ID")
-        api_id = int(api_id_env) if api_id_env and api_id_env.strip().isdigit() else DEFAULT_API_ID
-        api_hash = os.getenv("TELEGRAM_API_HASH") or DEFAULT_API_HASH
+        api_id = int(api_id_env) if api_id_env and api_id_env.strip().isdigit() else None
+        api_hash = os.getenv("TELEGRAM_API_HASH")
 
         if not api_id or not api_hash:
             print(
                 "TELEGRAM_API_ID or TELEGRAM_API_HASH is missing.\n"
-                "Please place a valid .env file next to the application or specify DEFAULT_API_ID/HASH"
+                "Please place a valid .env file next to the application"
             )
             sys.exit(1)
 

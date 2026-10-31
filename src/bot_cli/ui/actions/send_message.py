@@ -45,5 +45,5 @@ class SendMessageAction(Action):
                 await asyncio.sleep(0.1)
 
             if targets:
-                print(f"Success {success_count}/{len(targets)} messsages.")
+                print(f"Success {success_count}/{len(targets)} messages.")
             break
