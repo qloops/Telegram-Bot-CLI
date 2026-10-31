@@ -4,6 +4,8 @@ from bot_cli.ui.menu import ConsoleMenu
 from bot_cli.ui.actions.send_message import SendMessageAction
 from bot_cli.ui.actions.toggle_listener import ToggleListenerAction
 from bot_cli.ui.actions.get_messages import GetMessagesAction
+from bot_cli.ui.actions.set_bot_name import SetBotNameAction
+
 
 class Application:
     def __init__(self, config: BotConfig) -> None:
@@ -19,6 +21,7 @@ class Application:
                     menu.register(SendMessageAction())
                     menu.register(ToggleListenerAction())
                     menu.register(GetMessagesAction())
+                    menu.register(SetBotNameAction())
                     await menu.loop()
                     return
 

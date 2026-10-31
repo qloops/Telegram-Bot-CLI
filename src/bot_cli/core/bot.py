@@ -15,12 +15,7 @@ class TelegramBotSession:
         
         proxy_dict = None
         if self._config.proxy:
-            raw_dict = self._config.proxy.to_pyrogram_dict()
-            proxy_dict = {
-                "scheme": "socks5",
-                "hostname": str(raw_dict["hostname"]),
-                "port": int(raw_dict["port"])
-            }
+            proxy_dict = self._config.proxy.to_pyrogram_dict()
 
         self._client = Client(
             name="session",

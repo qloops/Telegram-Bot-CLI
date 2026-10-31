@@ -56,15 +56,15 @@ class GetMessagesAction(Action):
                         continue
 
                     sender = (
-                        msg.from_user.username
+                        ("@" + msg.from_user.username)
                         if (msg.from_user and msg.from_user.username)
                         else (msg.from_user.id if msg.from_user else "<Empty>")
                     )
-                    sender_str = f"@{sender}" if sender else "<Empty>"
+                    sender_str = f"{sender}" if sender else "<Empty>"
                     text = msg.text or msg.caption or "<Empty>"
                     date_str = msg.date.strftime("%d/%m %H:%M:%S") if msg.date else "--/-- --:---"
 
-                    print(f"\n[OLD_MESSAGE] [{msg.chat.id} | {sender_str} | {date_str}]: {text}")
+                    print(f"\n[OLD_MESSAGE] [{msg.id}] [{msg.chat.id} | {sender_str} | {date_str}]: {text}")
                     found_count += 1
             await asyncio.sleep(0.1)
             print(f"\nTotal fetched: {found_count}/{len(message_ids)} messages")

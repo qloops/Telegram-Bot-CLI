@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 
 from bot_cli.core.proxy import Socks5Proxy
 
+# TODO: Не забыть указать какие не жалко
 DEFAULT_API_ID: int = None
 DEFAULT_API_HASH: str = None
 
